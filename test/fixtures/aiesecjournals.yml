@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: MyText
+  goal: MyText
+  successstory: MyString
+  failurestory: MyString
+  note: MyString
+
+two:
+  event: MyText
+  goal: MyText
+  successstory: MyString
+  failurestory: MyString
+  note: MyString

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="img" style="background-image: url(<%= /assests/images/Bookone.jpeg %>)">
+<class = "img">
+<h1>Aiesecjournals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Goal</th>
+      <th>Successstory</th>
+      <th>Failurestory</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aiesecjournals.each do |aiesecjournal| %>
+      <tr>
+        <td><%= aiesecjournal.event %></td>
+        <td><%= aiesecjournal.goal %></td>
+        <td><%= aiesecjournal.successstory %></td>
+        <td><%= aiesecjournal.failurestory %></td>
+        <td><%= aiesecjournal.note %></td>
+        <td><%= link_to 'Show', aiesecjournal %></td>
+        <td><%= link_to 'Edit', edit_aiesecjournal_path(aiesecjournal) %></td>
+        <td><%= link_to 'Destroy', aiesecjournal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</class>
+
+<%= link_to 'New Aiesecjournal', new_aiesecjournal_path %>
+
+

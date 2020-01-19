@@ -1,0 +1,662 @@
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAiesecjournals (20200106133719)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "aiesecjournals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event" text, "goal" text, "successstory" varchar, "failurestory" varchar, "note" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200106133719"]]
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-06 13:37:59.092865"], ["updated_at", "2020-01-06 13:37:59.092865"]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-01-06 16:38:33 +0300
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.8ms | Allocations: 416)
+Completed 200 OK in 57ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 2334)
+
+
+Started GET "/aiesecjournals" for ::1 at 2020-01-06 16:39:10 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.7ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:18
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1567)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.21.1
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+Completed 500 Internal Server Error in 4471ms (ActiveRecord: 1.6ms | Allocations: 27063)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application in C:/Ruby26-x64/ProjectRuby/Journal/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9
+Started GET "/aiesecjournals" for ::1 at 2020-01-06 18:25:01 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (3.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:18
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 3.0ms | Allocations: 4902)
+
+
+Started GET "/aiesecjournals/new" for ::1 at 2020-01-06 18:25:09 +0300
+Processing by AiesecjournalsController#new as HTML
+  Rendering aiesecjournals/new.html.erb within layouts/application
+  Rendered aiesecjournals/_form.html.erb (Duration: 79.8ms | Allocations: 5540)
+  Rendered aiesecjournals/new.html.erb within layouts/application (Duration: 83.2ms | Allocations: 5890)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 141ms (Views: 132.7ms | ActiveRecord: 1.0ms | Allocations: 15327)
+
+
+Started GET "/aiesecjournals" for ::1 at 2020-01-06 18:25:13 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:18
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 632)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.3ms | Allocations: 5048)
+
+
+Started GET "/" for ::1 at 2020-01-08 14:27:55 +0300
+Started GET "/" for ::1 at 2020-01-08 14:27:55 +0300
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 82.3ms | Allocations: 425)
+Completed 200 OK in 307ms (Views: 159.4ms | ActiveRecord: 0.0ms | Allocations: 2730)
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 53.7ms | Allocations: 439)
+Completed 200 OK in 313ms (Views: 174.3ms | ActiveRecord: 0.0ms | Allocations: 2701)
+
+
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:28:47 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (1.5ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:18
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 119.2ms | Allocations: 1567)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 753ms (Views: 680.6ms | ActiveRecord: 3.0ms | Allocations: 10846)
+
+
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:34:54 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 46.1ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 122.1ms | ActiveRecord: 0.3ms | Allocations: 6301)
+
+
+Started GET "/logo.png" for ::1 at 2020-01-08 14:34:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/logo.png"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:34:58 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 663)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 68.9ms | ActiveRecord: 0.3ms | Allocations: 5137)
+
+
+Started GET "/logo.png" for ::1 at 2020-01-08 14:34:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/logo.png"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:39:06 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (2.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 47.0ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 101.5ms | ActiveRecord: 2.3ms | Allocations: 6292)
+
+
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:47:45 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.4ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 57.7ms | Allocations: 958)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 134.7ms | ActiveRecord: 0.4ms | Allocations: 6315)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/bookone.jpeg"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.2.1) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.2.1) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.2.1) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.2.1) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:47:49 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.5ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 640)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 96.1ms | ActiveRecord: 0.5ms | Allocations: 5073)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/bookone.jpeg"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.2.1) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.2.1) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.2.1) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.2.1) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:49:32 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 67.1ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 143.5ms | ActiveRecord: 0.3ms | Allocations: 6288)
+
+
+Started GET "/bookone.jpeg" for ::1 at 2020-01-08 14:49:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/bookone.jpeg"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:51:19 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.1ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.1ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 528.8ms | Allocations: 158567)
+Completed 500 Internal Server Error in 542ms (ActiveRecord: 0.7ms | Allocations: 159779)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bookone' for #<#<Class:0x0000000009232b58>:0x00000000092300b0>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: 
+    4: <div style="background-image: url(<%bookone.jpeg%>)">
+    5: <h1>Aiesecjournals</h1>
+    6: 
+    7: <table>
+  
+app/views/aiesecjournals/index.html.erb:4
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:51:52 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.2ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.1ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 567.9ms | Allocations: 158489)
+Completed 500 Internal Server Error in 577ms (ActiveRecord: 0.5ms | Allocations: 159696)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bookone' for #<#<Class:0x000000000c26e7b8>:0x000000000c26cf30>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: 
+    4: <div style="background-image: url(<%=bookone.jpeg%>)">
+    5: <h1>Aiesecjournals</h1>
+    6: 
+    7: <table>
+  
+app/views/aiesecjournals/index.html.erb:4
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:51:56 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.2ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.1ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.2ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 520.1ms | Allocations: 158177)
+Completed 500 Internal Server Error in 523ms (ActiveRecord: 0.6ms | Allocations: 158640)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bookone' for #<#<Class:0x000000000c26e7b8>:0x000000000c290ef8>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: 
+    4: <div style="background-image: url(<%=bookone.jpeg%>)">
+    5: <h1>Aiesecjournals</h1>
+    6: 
+    7: <table>
+  
+app/views/aiesecjournals/index.html.erb:4
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:52:09 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.3ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.1ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.1ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Aiesecjournal Load (0.0ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 564.8ms | Allocations: 158488)
+Completed 500 Internal Server Error in 573ms (ActiveRecord: 0.6ms | Allocations: 159695)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bookone' for #<#<Class:0x000000000c3cf0f8>:0x000000000c3cd848>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: 
+    4: <div style="background-image: url(<%= bookone.jpeg %>)">
+    5: <h1>Aiesecjournals</h1>
+    6: 
+    7: <table>
+  
+app/views/aiesecjournals/index.html.erb:4
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:52:33 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 31.4ms | Allocations: 1204)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms | Allocations: 2412)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p id="notice"><%= notice %></p>
+
+
+<div style="background-image: url(<%= /assets/images/bookone.jpeg %>)">
+<h1>Aiesecjournals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Goal</th>
+      <th>Successstory</th>
+      <th>Failurestory</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aiesecjournals.each do |aiesecjournal| %>
+      <tr>
+        <td><%= aiesecjournal.event %></td>
+        <td><%= aiesecjournal.goal %></td>
+        <td><%= aiesecjournal.successstory %></td>
+        <td><%= aiesecjournal.failurestory %></td>
+        <td><%= aiesecjournal.note %></td>
+        <td><%= link_to 'Show', aiesecjournal %></td>
+        <td><%= link_to 'Edit', edit_aiesecjournal_path(aiesecjournal) %></td>
+        <td><%= link_to 'Destroy', aiesecjournal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aiesecjournal', new_aiesecjournal_path %>
+
+):
+1:    <p id="notice"><%= notice %></p>
+2:    
+3:    
+4:    <div style="background-image: url(<%= /assets/images/bookone.jpeg %>)">
+5:    <h1>Aiesecjournals</h1>
+6:    
+7:    <table>
+8:      <thead>
+9:        <tr>
+10:          <th>Event</th>
+11:          <th>Goal</th>
+12:          <th>Successstory</th>
+13:          <th>Failurestory</th>
+14:          <th>Note</th>
+15:          <th colspan="3"></th>
+16:        </tr>
+17:      </thead>
+18:    
+19:      <tbody>
+20:        <% @aiesecjournals.each do |aiesecjournal| %>
+21:          <tr>
+22:            <td><%= aiesecjournal.event %></td>
+23:            <td><%= aiesecjournal.goal %></td>
+24:            <td><%= aiesecjournal.successstory %></td>
+25:            <td><%= aiesecjournal.failurestory %></td>
+26:            <td><%= aiesecjournal.note %></td>
+27:            <td><%= link_to 'Show', aiesecjournal %></td>
+28:            <td><%= link_to 'Edit', edit_aiesecjournal_path(aiesecjournal) %></td>
+29:            <td><%= link_to 'Destroy', aiesecjournal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+30:          </tr>
+31:        <% end %>
+32:      </tbody>
+33:    </table>
+34:    
+35:    <br>
+36:    
+37:    <%= link_to 'New Aiesecjournal', new_aiesecjournal_path %>
+  
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 14:53:33 +0300
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  [1m[36mAiesecjournal Load (0.2ms)[0m  [1m[34mSELECT "aiesecjournals".* FROM "aiesecjournals"[0m
+  ↳ app/views/aiesecjournals/index.html.erb:20
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 33.8ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 96.5ms | ActiveRecord: 0.2ms | Allocations: 6296)
+
+
+Started GET "/aiesecjournals" for ::1 at 2020-01-08 15:05:05 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AiesecjournalsController#index as HTML
+  Rendering aiesecjournals/index.html.erb within layouts/application
+  Rendered aiesecjournals/index.html.erb within layouts/application (Duration: 66.7ms | Allocations: 1209)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.0ms | Allocations: 2414)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p id="notice"><%= notice %></p>
+
+
+<div class="img" style="background-image: url(<%= /assests/images/Bookone.jpeg %>)">
+<class = "img">
+<h1>Aiesecjournals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Goal</th>
+      <th>Successstory</th>
+      <th>Failurestory</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aiesecjournals.each do |aiesecjournal| %>
+      <tr>
+        <td><%= aiesecjournal.event %></td>
+        <td><%= aiesecjournal.goal %></td>
+        <td><%= aiesecjournal.successstory %></td>
+        <td><%= aiesecjournal.failurestory %></td>
+        <td><%= aiesecjournal.note %></td>
+        <td><%= link_to 'Show', aiesecjournal %></td>
+        <td><%= link_to 'Edit', edit_aiesecjournal_path(aiesecjournal) %></td>
+        <td><%= link_to 'Destroy', aiesecjournal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</class>
+
+<%= link_to 'New Aiesecjournal', new_aiesecjournal_path %>
+
+
+
+):
+1:    <p id="notice"><%= notice %></p>
+2:    
+3:    
+4:    <div class="img" style="background-image: url(<%= /assests/images/Bookone.jpeg %>)">
+5:    <class = "img">
+6:    <h1>Aiesecjournals</h1>
+7:    
+8:    <table>
+9:      <thead>
+10:        <tr>
+11:          <th>Event</th>
+12:          <th>Goal</th>
+13:          <th>Successstory</th>
+14:          <th>Failurestory</th>
+15:          <th>Note</th>
+16:          <th colspan="3"></th>
+17:        </tr>
+18:      </thead>
+19:    
+20:      <tbody>
+21:        <% @aiesecjournals.each do |aiesecjournal| %>
+22:          <tr>
+23:            <td><%= aiesecjournal.event %></td>
+24:            <td><%= aiesecjournal.goal %></td>
+25:            <td><%= aiesecjournal.successstory %></td>
+26:            <td><%= aiesecjournal.failurestory %></td>
+27:            <td><%= aiesecjournal.note %></td>
+28:            <td><%= link_to 'Show', aiesecjournal %></td>
+29:            <td><%= link_to 'Edit', edit_aiesecjournal_path(aiesecjournal) %></td>
+30:            <td><%= link_to 'Destroy', aiesecjournal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+31:          </tr>
+32:        <% end %>
+33:      </tbody>
+34:    </table>
+35:    
+36:    <br>
+37:    </class>
+38:    
+39:    <%= link_to 'New Aiesecjournal', new_aiesecjournal_path %>
+  
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag
+app/views/aiesecjournals/index.html.erb:4: unknown regexp options - ag

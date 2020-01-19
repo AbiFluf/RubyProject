@@ -1,0 +1,42 @@
+<%= form_with(model: aiesecjournal, local: true) do |form| %>
+  <% if aiesecjournal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aiesecjournal.errors.count, "error") %> prohibited this aiesecjournal from being saved:</h2>
+
+      <ul>
+        <% aiesecjournal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :event %>
+    <%= form.text_area :event %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goal %>
+    <%= form.text_area :goal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :successstory %>
+    <%= form.text_field :successstory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :failurestory %>
+    <%= form.text_field :failurestory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

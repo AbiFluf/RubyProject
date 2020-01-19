@@ -1,0 +1,2 @@
+module AiesecjournalsHelper
+end

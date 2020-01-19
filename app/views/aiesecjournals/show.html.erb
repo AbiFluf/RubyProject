@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @aiesecjournal.event %>
+</p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @aiesecjournal.goal %>
+</p>
+
+<p>
+  <strong>Successstory:</strong>
+  <%= @aiesecjournal.successstory %>
+</p>
+
+<p>
+  <strong>Failurestory:</strong>
+  <%= @aiesecjournal.failurestory %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @aiesecjournal.note %>
+</p>
+
+<%= link_to 'Edit', edit_aiesecjournal_path(@aiesecjournal) %> |
+<%= link_to 'Back', aiesecjournals_path %>

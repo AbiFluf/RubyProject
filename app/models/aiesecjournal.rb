@@ -1,0 +1,2 @@
+class Aiesecjournal < ApplicationRecord
+end
